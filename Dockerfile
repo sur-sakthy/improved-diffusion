@@ -6,3 +6,8 @@ RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/
 RUN apt-get update
 RUN apt-get install -y libopenmpi-dev
 RUN pip install mpi4py
+
+RUN mkdir -p /setup
+WORKDIR /setup
+COPY setup.py .
+RUN pip install -e .
