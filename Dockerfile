@@ -7,7 +7,7 @@ RUN apt-get update
 RUN apt-get install -y libopenmpi-dev
 RUN pip install mpi4py
 
-RUN mkdir -p /setup
-WORKDIR /setup
+RUN mkdir -p /i-ddpm
+WORKDIR /i-ddpm
 COPY setup.py .
 RUN pip install -e .
